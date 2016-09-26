@@ -1,0 +1,8 @@
+.git/
+.meteor/
+private/
+public/
+resources/
+mup.json
+settings.json
+mobile-config.js

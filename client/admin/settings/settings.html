@@ -1,0 +1,73 @@
+<template name="adminSettings">
+  <h1>Settings</h1>
+  
+  <form>
+  <ul class="form">
+    <li>
+      <label for="settings_app_name">App Name</label>
+      <input type="text" name="settings_app_name" id="settings_app_name" value="{{_weddingData.publicData.appname}}">
+    </li>
+
+    <li>
+      <label for="settings_title">Title</label>
+      <input type="text" name="settings_title" id="settings_title" value="{{_weddingData.publicData.title}}">
+    </li>
+  
+    <li>
+      <label for="settings_subtitle">Subtitle</label>
+      <input type="text" name="settings_subtitle" id="settings_subtitle" value="{{_weddingData.publicData.subtitle}}">
+    </li>
+
+    <li>
+      <label for="settings_admin_name">Admin Name</label>
+      <input type="text" name="settings_admin_name" id="settings_admin_name" value="{{_weddingData.publicData.adminName}}">
+    </li>
+
+    <li>
+      <label for="settings_admin_email">Admin Email</label>
+      <input type="text" name="settings_admin_email" id="settings_admin_email" value="{{_weddingData.publicData.adminEmail}}">
+    </li>
+
+    <li>
+      <label for="settings_admin_phone">Admin Phone</label>
+      <input type="text" name="settings_admin_phone" id="settings_admin_phone" value="{{_weddingData.publicData.adminPhone}}">
+    </li>
+
+    <li>
+      <label for="settings_display_invitation">Show Invitation</label>
+      <select name="settings_display_invitation">
+        <option {{_isEqual _weddingData.privateData.display.invitation true}} value="true">True</option>
+        <option {{_isEqual _weddingData.privateData.display.invitation false}} value="false">False</option>
+      </select>
+    </li>
+
+    <li>
+      <label for="settings_display_guestbook">Show Guestbook</label>
+      <select name="settings_display_guestbook">
+        <option {{_isEqual _weddingData.privateData.display.guestbook true}} value="true">True</option>
+        <option {{_isEqual _weddingData.privateData.display.guestbook false}} value="false">False</option>
+      </select>
+    </li>
+
+    <li>
+      <label for="settings_display_photos">Show Photos</label>
+      <select name="settings_display_photos">
+        <option {{_isEqual _weddingData.privateData.display.photos true}} value="true">True</option>
+        <option {{_isEqual _weddingData.privateData.display.photos false}} value="false">False</option>
+      </select>
+    </li>
+
+    <li>
+      <label for="settings_display_seating">Show Seating</label>
+      <select name="settings_display_seating">
+        <option {{_isEqual _weddingData.privateData.display.seating true}} value="true">True</option>
+        <option {{_isEqual _weddingData.privateData.display.seating false}} value="false">False</option>
+      </select>
+    </li>
+    <li>
+      <button>Update Settings &rarr;</button>
+    </li>
+  </ul>
+  </form>
+
+</template>

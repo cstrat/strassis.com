@@ -1,0 +1,20 @@
+<template name="adminPhotos">
+  <h1>Photos</h1>
+
+  <ul class="adminPhotoList">
+  {{#each photoList}}
+    <li class="{{photoClass}}">
+      <a href="https://s3-ap-southeast-2.amazonaws.com/strassis/media/{{_id}}" target="_blank"><img src="https://s3-ap-southeast-2.amazonaws.com/strassis/media/{{_id}}-thumb" class="rotate-{{rotate}}"></a>
+      <strong>{{_name account_id}}</strong>
+      <button class="rotate">↻</button>
+      <button class="delete">Delete</button>
+      {{#if isDeleted}}
+      <button class="remove">Remove</button>
+      {{else}}
+      <button class="public">Public</button>
+      {{/if}}
+    </li>
+  {{/each}}
+  </ul>
+
+</template>

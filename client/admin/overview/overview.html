@@ -1,0 +1,24 @@
+<template name="adminOverview">
+  <h1>Overview</h1>
+ 
+  <h3>Invites</h3> 
+  <dl class="stats">
+    <dt>Created</dt>      <dd>{{invitesCreated}}</dd>
+    <dt>Registered</dt>   <dd>{{invitesRegistered}}</dd>
+    <dt>Invited</dt>      <dd>{{invitesSent}}</dd>
+  </dl>
+
+  <h3>People</h3>
+  <dl class="stats">
+    <dt>Added</dt>        <dd>{{peopleAdded}}</dd>
+    <dt>Responded</dt>    <dd>{{peopleResponded}}</dd>
+  </dl>
+
+  <h3>Responses</h3>
+  <dl class="stats">
+    <dt>No Response</dt>  <dd>{{noResponse}}</dd>
+    <dt>Yes</dt>          <dd>{{willAttend}}</dd>
+    <dt>No</dt>           <dd>{{willNotAttend}}</dd>
+  </dl>
+
+</template>

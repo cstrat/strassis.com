@@ -1,0 +1,176 @@
+
+// Standard Element Styling
+h1 {
+  margin: 0.1em 0 0.3em 0;
+  padding: 0;
+  font-size: 2em;
+}
+
+h2 {
+  margin: 0.2em 0 0.3em 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+a {
+  color: #008;
+}
+
+p {
+  line-height: 150%;
+}
+
+p.error {
+  color: #A00;
+
+  strong {
+    background: #A00;
+    color: #FFF;
+    display: inline-block;
+    padding: 0.1em 0.5em;
+  }
+}
+
+div.error {
+  color: #FFF;
+  background: #CAA;
+  border-radius: 3px;
+  padding: 0.6em 0 0.6em 0;
+  background: #D00;
+  border: 1px solid #E88;
+  text-align: center;
+}
+
+code {
+  background: #444;
+  color: #FFF;
+  padding: 0.2em 0.5em;
+}
+
+
+// Form Styling
+ul.form {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin: 0.2em 0 0.5em 0;
+    padding: 0.1em 0.3em;
+
+    label {
+      display: block;
+      width: 100%;
+      padding: 0.2em 0 0.5em 0;
+    }
+
+    input, select, textarea, button {
+      display: block;
+      width: 100%;
+      padding: 0.3em 0.6em;
+      border: 1px solid #EEE;
+      background: #FFF;
+    }
+
+    button {
+      padding: 0.5em 0 0.6em 0;
+      background: #CAA;
+      border: none;
+    }
+  }
+}
+
+ul.error {
+  li {
+    label {
+      color: #800;
+    }
+
+    input, select, textarea {
+      background: #FEE;
+      border: 1px solid #F00;
+    }
+  }
+}
+
+
+// Body Styling
+.normalBody {
+  margin: 1em auto;
+  padding: 0.5em 1em 1em 1em;
+
+  max-width: 500px;
+  border-radius: 5px;
+
+  background-color: rgba(240, 240, 240, 0.8);
+    
+  .navigation {
+    margin: 1em 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin: 0;
+
+      a {
+        color: #000;
+      }
+    }
+
+    li+li:before {
+      content: '| ';
+      color: #666;
+    }
+  }
+
+  
+  .header {
+    margin-bottom: 1em;
+  }
+
+  .header h1,
+  .header h2 {
+    text-align: center;
+    font-family: 'Rochester';
+    margin: 0;
+    color: #000;
+    font-weight: normal;
+  }
+
+  .header h1 {
+    font-size: 3.5em;
+  }
+
+  .header h2 {
+    font-size: 1.8em;
+  }
+
+}
+
+
+div.banner {
+  text-align: center;
+
+  padding: 0.3em 1em;
+  background: #FFF;
+  color: #222;
+
+  margin: 0 -1em 0 -1em;
+
+  span {
+    font-weight: bold;
+    display: block;
+  }
+
+  a {
+    display: inline-block;
+    color: #000;
+    margin-top: 0.5em;
+  }
+}
+
+div.alert-rsvps {
+  background: yellow;
+}

@@ -1,0 +1,151 @@
+<template name="adminGuestlist">
+
+  <h1>Guestlist</h1>
+
+  <div class="midBar">
+    <button class="addGuest">Add Guest</button>
+    <input type="text" class="filterTags" placeholder="Filter Tags">
+    <ul class="listOfGuests">
+      {{#each guestlist}}
+      <li class="{{nameSelected}} {{nameClass}} {{accountCreated}}">{{namePlus}}</li>
+      {{/each}}
+      <li class="stats">Showing {{guestlistCount true}} of {{guestlistCount false}} Guestcards</li>
+    </ul>
+  </div>
+
+  <div class="rightBar">
+    {{#if openGuestcard}}
+    {{#with openGuestcardData}}
+    <div class="guestCard">
+      <h2>Names on Invitation</h2>
+      <form>
+      <ul class="form">
+        {{#each nameList}}
+        <li class="oneThird">
+          <input type="text" class="guestName" name="guest_names" value="{{name}}" placeholder="Guest Name">
+        </li><li class="oneThird">
+          <select name="guest_rsvps">
+            <optgroup label="No Response">
+              <option {{rsvpResponse "null"}} value="null">No Repsonse</option>
+            </optgroup>
+            <optgroup label="Responded">
+              <option {{rsvpResponse "true"}} value="true">Attending!</option>
+              <option {{rsvpResponse "false"}} value="false">Not Attending</option>
+            </optgroup>
+          </select>
+        </li><li class="oneThird">
+          <input type="text" name="guest_comments" value="{{comment}}" placeholder="Guest Comment">
+        </li>
+        {{/each}}
+        <li class="twoThirds">
+          <label for="guest_email">Email</label>
+          <input type="text" name="guest_email" id="guest_email" value="{{email}}">
+        </li><li class="oneThird">
+          <label for="guest_linked">Account ID</label>
+          <input type="text" name="guest_linked" id="guest_linked" value="{{account_id}}" placeholder="Mongo ID">
+        </li><li class="twoThirds">
+          <label for="guest_tags">Tags (comma separated)</label>
+          <input type="text" name="guest_tags" id="guest_tags" value="{{tagList}}">
+        </li><li class="oneThird">
+          <label for="guest_phone">Phone</label>
+          <input type="text" name="guest_phone" id="guest_phone" value="{{phone}}">
+        </li>
+        <li>
+          {{#if _id}}
+          <button class="updateGuestcard">Update Guestcard</button>
+          {{else}}
+          <button class="addGuestcard">Add Guestcard</button>
+          {{/if}}
+        </li>
+        {{#if _id}}
+        <li class="note">
+          To delete this invite, just clear all names and click update!
+        </li>
+        {{/if}}
+      </ul>
+      </form>
+
+      <ul class="dateList">
+        <li><strong>Created:</strong> <abbr title="{{dates.created}}">{{_fromNow dates.created}}</abbr></li>
+        <li><strong>Updated:</strong> <abbr title="{{dates.updated}}">{{_fromNow dates.updated}}</abbr></li>
+        <li><strong>Setup:</strong>
+        {{#if email}}
+          {{#if dates.setup}}
+            <abbr title="{{dates.setup}}">{{_fromNow dates.setup}}</abbr>
+          {{else}}
+            <button class="setupAccount">Setup Account</button>
+          {{/if}}
+        {{/if}}
+        </li>
+        <li><strong>Invited:</strong>
+        {{#if dates.invited}}
+          <abbr title="{{dates.invited}}">{{_fromNow dates.invited}}</abbr>
+        {{else}}
+          <button class="sendInvite">Send Invite</button>
+        {{/if}}</li>
+        {{#if dates.invited}}
+        <li><strong>Reminder:</strong>
+          {{#if dates.reminder}}
+            <abbr title="{{dates.reminder}}">{{_fromNow dates.reminder}}</abbr>
+          {{else}}
+            <i>No Reminder Sent</i>
+          {{/if}}
+        <button class="sendReminder">Send Reminder</button>
+        </li>
+        {{/if}}
+      </ul>
+
+    </div>
+    {{/with}}
+    {{else}}
+
+    <div class="guestActions">
+      <h2>Guestlist Actions</h2>
+      <!--
+      <button class="createAccounts">Create Missing Accounts</button>
+      <p>
+        This will create an account in the database associated with the guestcards listed on the sidebar right now.
+        Filtering the list will limit how many accounts are created.
+        No emails or notifications will be sent to the account holders, however if they came to the website and tried to reset their passwork that would work.
+      </p>
+
+      <button class="sendInvites">Send Email Invites</button>
+      <p>
+        This will send an email out to all those who haven't recieved one yet asking that they come and sign up.
+        Basically the email will have a link which will allow them to set their password. It is the same as if they had clicked on 'forgot my password' on the login screen.
+      </p>
+
+      <button class="sendAllReminder">Send Reminder Email</button>
+      <p>
+        This will send an email to all those who have responded so far, informing them of their RSVP and reminding them about the wedding date.
+        Also attached will be a calendar invitation.
+      </p>
+      <p class="important">
+        {{#if _weddingData.privateData.dates.reminderLastSent}}
+          Last reminder email was sent <abbr title="{{_weddingData.privateData.dates.reminderLastSent}}">{{_fromNow _weddingData.privateData.dates.reminderLastSent}}</abbr>.
+        {{else}}
+          <i>No reminder emails sent.</i>
+        {{/if}}
+      </p>
+
+      <button class="emailGuestlist">Email Guestlist</button>
+      <p>
+        This will send an email with the entire guestlist and their preferences.
+      </p>
+      -->
+
+      <input id="emailSubject" value="" placeholder="Email Subject Line">
+      <textarea id="emailText"></textarea>
+      <button class="sendGroupMail">Send Batch Email to Guests</button>
+      <p>
+        Whatever text is in this box will be sent to all ATTENDING guests!
+      </p>
+
+
+
+
+    </div>
+
+    {{/if}}
+  </div>
+</template>

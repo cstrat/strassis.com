@@ -1,0 +1,26 @@
+<template name="adminContent">
+  <h1>Content Editor</h1>
+  
+  <div class="editor">
+  <h2>Edit Content</h2>
+    <ul class="form">
+      <li><select>
+        <option value="blank">&mdash; Select a Page &mdash;</option>
+        <optgroup label="Public Pages">
+          <option value="welcome">Welcome Page</option>
+        </optgroup>
+        <optgroup label="Private Pages">
+          <option value="invite">Invitation Page</option>  
+        </optgroup>
+      </select></li>
+      <li><textarea></textarea></li>
+      <li><button>Save Content</button></li>
+    </ul>
+  </div>
+
+  <div class="preview">
+  <h2>Preview Content</h2>
+  {{#markdown}}{{contentPreview}}{{/markdown}}
+  </div>
+
+</template>

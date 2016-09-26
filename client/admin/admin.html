@@ -1,0 +1,46 @@
+<template name="adminLayout">
+  <div class="adminBody"> 
+
+  {{#if _subReady}}
+    {{> Template.dynamic template=top}}
+  
+  <div class="adminContent"> 
+    {{> Template.dynamic template=main}}
+  </div>
+  
+  {{else}}
+    {{> adminLoading}}
+  {{/if}}
+
+  </div>
+</template>
+
+
+
+
+<template name="adminTop">
+  <div class="header">
+    <h1>Your Wedding Portal</h1>
+  </div>
+  <div class="sidebar">
+    <ul class="navigation">
+      <li><a href="/admin">Overview</a></li>
+      <li><a href="/admin/settings">Settings</a></li>
+      <li><a href="/admin/content">Content</a></li>
+      <li><a href="/admin/guestlist">Guestlist</a></li>
+      <li><a href="/admin/photos">Photos</a></li>
+      <li><a href="/admin/guestbook">Guestbook</a></li>
+    </ul>
+  </div>
+
+</template>
+
+
+
+
+<template name="adminLoading">
+  ...Loading...
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+</template>

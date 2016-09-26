@@ -1,0 +1,62 @@
+.adminPhotoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1em;
+  
+    a {
+      display: block;
+    }
+
+    strong {
+      display: block;
+      padding: 0.25em 0 0.5em 0;
+    }
+  
+    button {
+      line-height: 2em;
+      background: #CCC;
+      border: none;
+      padding: 0.2em 0.85em;
+    }
+
+    button.remove {
+      background: #FCC;
+    }
+
+    img {
+      border: 2px solid #FFF;
+    }
+
+  }
+
+  li.photo-removed {
+    strong {
+      text-decoration: line-through;
+    }
+    img {
+      opacity: 0.3;
+    }
+  }
+
+  li.photo-public {
+    img {
+      border: 2px solid #0A0;
+    }
+  }
+
+  li.photo-ready {
+    color: #000;
+  }
+
+  li.photo-error {
+    strong {
+      color: #F00;
+    }
+  }
+
+}

@@ -1,0 +1,139 @@
+.midBar {
+  float: left;
+  width: 15em;
+}
+
+.midBar .addGuest {
+  width: 100%;
+  margin-bottom: 0.5em;
+  border: none;
+  padding: 0.5em 0;
+  background: #99F;
+}
+
+.midBar .smallButton {
+  width: 100%;
+  border: none;
+  padding: 0.25em 0;
+  margin: 0 0 0.5em 0;
+  background: #CCC;
+  font-size: 0.85em;
+}
+
+.midBar .filterTags {
+  width: 100%;
+  padding: 0.35em 0.5em;
+  margin-bottom: 1em;
+  font-size: 0.85em;
+}
+
+.listOfGuests {
+  display: block;
+  list-style: none;
+  margin: 0.5em 0 1em 0;
+  padding: 0;
+}
+
+.listOfGuests li {
+  padding: 0.25em 0 0.25em 0.5em;
+  margin-bottom: 2px;
+  font-size: 0.85em;
+  border-left: 10px solid #FFF;
+  color: #444;
+  border-radius: 0 6px 6px 0;
+}
+
+.listOfGuests .not-yet-invited      { border-left-color: #AAA; }
+.listOfGuests .not-responded        { border-left-color: #666; }
+.listOfGuests .mixed-response       { border-left-color: #008; }
+.listOfGuests .all-attending        { border-left-color: #080; }
+.listOfGuests .all-not-attending    { border-left-color: #800; }
+.listOfGuests .selected             { background: #AAA; color: #000; }
+
+.listOfGuests .missing-email        { color: #F00; }
+.listOfGuests .missing-email:after  { content: ' ✗'; float: right; margin-right: 0.5em; }
+
+.listOfGuests .account-linked:after { content: ' ✓'; float: right; margin-right: 0.5em; }
+
+.listOfGuests .stats {
+  color: #444;
+  padding: 1em 0;
+  font-size: 0.85em;
+}
+
+
+
+.rightBar {
+  margin-left: 16em;
+  min-width: 600px;
+  max-width: 1000px;
+}
+
+.guestCard {
+
+  .twoThirds {
+    width: 66%;
+    display: inline-block;
+  }
+
+  .oneHalf {
+    width: 50%;
+    display: inline-block;
+  }
+
+  .oneThird {
+    width: 33%;
+    display: inline-block;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .note {
+    text-align: center;
+    padding: 1em 0;
+    color: #777;
+  }
+
+  .dateList {
+    list-style-type: none;
+    margin: 0 0 0 2em;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.5em;
+      line-height: 125%;
+
+      strong {
+        display: inline-block;
+        width: 6em;
+        text-align: right;
+        padding-right: 0.5em;
+      }
+    }
+  }
+
+}
+
+p.important {
+  font-weight: bold;
+
+  i {
+    color: #555;
+  }
+}
+
+
+#emailText {
+  display: block;
+  width: 15em;
+  height: 15em;
+  margin: 0 0 0.5em 0;
+}
+
+#emailSubject {
+  display: block;
+  width: 15em;
+  margin: 0 0 0.5em 0;
+}
